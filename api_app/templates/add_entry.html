@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load bootstrap3 %}
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{% static 'includes/bootstrap/dist/css/bootstrap.css' %}">
+	<meta charset="UTF-8">
+	<title>Add New Entry</title>
+</head>
+<body>
+	<form method="POST" class="post-form">{% csrf_token %}
+		{% for field in form %}
+			<div id="{{ field.auto_id }}_container">
+				{{ field.help_text }}
+				<div>
+					<span align="left">
+						{{ field.label_tag }} 
+					</span>
+					<span align="center">
+						{{ field }} 
+					</span>
+				</div>
+				<div id="{{ field.auto_id }}_errors">
+					{{ field.errors }}
+				</div>
+			</div>
+		{% endfor %}
+	    <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+	
+</body>
+</html>
