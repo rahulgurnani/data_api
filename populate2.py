@@ -8,6 +8,7 @@ fl = csv.reader(f, delimiter=',')
 k = 0
 for row in fl:
     if k == 0:
+        k+=1
         continue
     fp = FoodPermit()
     fp.locationid = int(row[0])
