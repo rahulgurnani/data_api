@@ -28,7 +28,7 @@ fp.noisent = d
 fp.approved = d
 fp.received = d
 fp.priorpermit = False
-fp.expirationdate = d
+fp.expirationdate = None
 
 fp.save()
 	
