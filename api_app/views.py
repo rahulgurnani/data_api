@@ -4,6 +4,8 @@ from .forms import FoodPermitForm
 from django.shortcuts import redirect
 from .models import FoodPermit
 from .filters import FoodPermitFilter
+from django.http import HttpResponse
+import populate_script
 
 def index(request):
 	context = {}
@@ -32,4 +34,6 @@ def predict_best(request):
 	context = {}
 	return render(request, 'predict_best.html', context)
 
-
+def populate(request):
+	populate_script.populate()
+	return HttpResponse("Populating Done")

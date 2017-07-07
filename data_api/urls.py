@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^search/',views.search),
     url(r'^add_entry/',views.add_entry),
     url(r'^predict_best/',views.predict_best),
+    url(r'^populate/',views.populate),
 ]
