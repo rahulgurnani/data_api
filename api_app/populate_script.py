@@ -8,6 +8,7 @@ f = open('Mobile_Food_Facility_Permit.csv', 'r')
 def populate():
     fl = csv.reader(f, delimiter=',')
     k = 0
+    flag = 0
     for row in fl:
         try:
             if k == 0:
@@ -57,8 +58,10 @@ def populate():
                 fp.expirationdate = datetime.strptime(row[22], '%m/%d/%Y %H:%M:%S %p').date()	# mm/dd/yyyy time		
             fp.save()    
         except Exception, e:
-            print "exception"
+            flag = 1
+            fw = open('exception', 'w')
+            fw.write('exception')
             continue
         k += 1
-    return k
+    return k, flag
     
