@@ -7,6 +7,7 @@ from datetime import datetime
 f = open('Mobile_Food_Facility_Permit.csv', 'r')
 def populate():
     fl = csv.reader(f, delimiter=',')
+    k = 0
     for row in fl:
         if k == 0:
             k+=1
