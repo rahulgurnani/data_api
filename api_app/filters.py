@@ -10,7 +10,7 @@ class FoodPermitFilter(django_filters.FilterSet):
         model = FoodPermit
         fields = ['applicant', 'address', 'address_contains', 'expired_permits']
         widgets = {
-                        'expirationdate': extras.SelectDateWidget    
+                        'expired_permits': extras.SelectDateWidget    
         }
     #     filter_overrides = {
     #     models.DateField: {
