@@ -51,4 +51,8 @@ for row in fl:
         fp.expirationdate = None		# mm/dd/yyyy time
     else:
         fp.expirationdate = datetime.strptime(row[22], '%m/%d/%Y %H:%M:%S %p').date()	# mm/dd/yyyy time		
-    fp.save()
+    try:
+        fp.save()    
+    except Exception, e:
+        print "Exception"
+    
