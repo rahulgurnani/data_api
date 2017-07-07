@@ -25,8 +25,8 @@ class FoodPermit(models.Model):
 	schedule = models.CharField(max_length=100, blank=True, default='')
 	dayshours = models.CharField(max_length=100, blank=True, default='')
 	noisent = models.DateField(default=datetime.date.today, null=True)
-	approved = models.DateField(default=datetime.date.today)
-	received = models.DateField(default=datetime.date.today)
+	approved = models.DateField(default=datetime.date.today, null=True)
+	received = models.DateField(default=datetime.date.today, null=True)
 	priorpermit = models.BooleanField()
 	expirationdate = models.DateField(default=datetime.date.today, null=True)
 	# location = models.
