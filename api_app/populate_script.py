@@ -58,9 +58,7 @@ def populate():
                 fp.expirationdate = datetime.strptime(row[22], '%m/%d/%Y %H:%M:%S %p').date()	# mm/dd/yyyy time		
             fp.save()    
         except Exception, e:
-            flag = 1
-            fw = open('exception', 'w')
-            fw.write('exception')
+            flag = e
             continue
         k += 1
     return k, flag
