@@ -22,7 +22,7 @@ class FoodPermit(models.Model):
 	y = models.DecimalField(max_digits=15, decimal_places=4, null=True)
 	latitude = models.DecimalField(max_digits=20, decimal_places=16)
 	longitude = models.DecimalField(max_digits=20, decimal_places=16)
-	schedule = models.CharField(max_length=200, blank=True, default='')
+	schedule = models.CharField(max_length=400, blank=True, default='')
 	dayshours = models.CharField(max_length=100, blank=True, default='')
 	noisent = models.DateField(default=datetime.date.today, null=True)
 	approved = models.DateField(default=datetime.date.today, null=True)
