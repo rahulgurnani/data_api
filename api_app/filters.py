@@ -1,7 +1,7 @@
 from .models import FoodPermit
 import django_filters
 from django.forms import extras
-from django import models
+from django.db import models
 
 class FoodPermitFilter(django_filters.FilterSet):
     address_contains = django_filters.CharFilter(name='address', lookup_expr='contains')
