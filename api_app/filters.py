@@ -1,5 +1,6 @@
 from .models import FoodPermit
 import django_filters
+from django.forms import extras
 
 class FoodPermitFilter(django_filters.FilterSet):
     address_contains = django_filters.CharFilter(name='address', lookup_expr='contains')
@@ -8,3 +9,14 @@ class FoodPermitFilter(django_filters.FilterSet):
     class Meta:
         model = FoodPermit
         fields = ['applicant', 'address', 'address_contains', 'expired_permits']
+        widgets = {
+                        'expirationdate': extras.SelectDateWidget    
+        }
+    #     filter_overrides = {
+    #     models.DateField: {
+    #         'filter_class': django_filters.DateFilter,
+    #         'extra': lambda f: {
+    #             'widget': extras.SelectDateWidget
+    #         },
+    #     },
+    # }
