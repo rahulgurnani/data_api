@@ -35,5 +35,5 @@ def predict_best(request):
 	return render(request, 'predict_best.html', context)
 
 def populate(request):
-	populate_script.populate()
-	return HttpResponse("Populating Done")
+	k = populate_script.populate()
+	return HttpResponse("Populating " + str(k) + " Done")
