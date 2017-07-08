@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^populate/',views.populate),
     url(r'^delete/$', views.delete_entry, name='delete'),
     url(r'^delete/(?P<locationid>\d+)/$', views.delete_entry, name='delete'),
-    url(r'^autoexpire/',views.auto_update),
+    #url(r'^autoexpire/',views.auto_update),
 ]
