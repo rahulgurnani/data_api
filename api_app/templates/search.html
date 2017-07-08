@@ -33,7 +33,7 @@
           </th>
         </tr>
         {% for foodpermit in filter.qs %}
-          <form method="post">
+          <form method="post" action="{% 'delete' locationid=foodpermit.locationid%}">
             {% csrf_token %}
               <tr>
                 <th>

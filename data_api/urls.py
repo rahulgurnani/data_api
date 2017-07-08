@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^predict_best/',views.predict_best),
     url(r'^populate/',views.populate),
     url(r'^delete/$', views.delete_entry, name='delete'),
-    url(r'^delete/(?P<id>\d+)/$', views.delete_entry, name='delete'),
+    url(r'^delete/(?P<locationid>\d+)/$', views.delete_entry, name='delete'),
 ]

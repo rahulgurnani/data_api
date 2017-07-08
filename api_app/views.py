@@ -38,5 +38,7 @@ def populate(request):
 	k, flag = populate_script.populate()
 	return HttpResponse("Populating " + str(k) + " Done exceptions " + str(flag))
 
-def delete_entry(request):
+def delete_entry(request, locationid=None):
+	if request.method == 'POST':
+		FoodPermit.objects.filter(locationid=locationid)
 	return HttpResponse("Deleted")
