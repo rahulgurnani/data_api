@@ -13,7 +13,7 @@
         {{ filter.form.as_p }}
         <button type="submit" class="btn btn-primary" >Search</button>
       </form>
-
+      <form method="post">
       <table style="width:100%">
         <tr>
           <th>
@@ -51,7 +51,9 @@
           </th>
        </tr>
       {% endfor %}
+      <button type="submit" value="Delete">
       </table>
+    </form>
   </div>
 </body>
 </html>
