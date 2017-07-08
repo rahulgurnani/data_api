@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api_app',
-    'bootstrap3'
+    'bootstrap3',
+    'crispy_forms',
+    'background_task'
 ]
 
 MIDDLEWARE = [
