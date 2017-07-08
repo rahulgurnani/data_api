@@ -10,7 +10,9 @@
   <h1>Search options:</h1>
   <div class="container">
     <form method="get">
-        {{ filter.form.as_p }}
+          <ul>
+            <li id="applicant" class="contact">{{ form.applicant }}</li>
+          </ul>
         <button type="submit" class="btn btn-primary" >Search</button>
       </form>
       <ul>
