@@ -37,3 +37,6 @@ def predict_best(request):
 def populate(request):
 	k, flag = populate_script.populate()
 	return HttpResponse("Populating " + str(k) + " Done exceptions " + str(flag))
+
+def delete_entry(request):
+	return HttpResponse("Deleted")
