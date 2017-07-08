@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api_app',
     'bootstrap3',
-    'crispy_forms',
     'background_task'
 ]
 
