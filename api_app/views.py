@@ -40,5 +40,5 @@ def populate(request):
 
 def delete_entry(request, locationid=None):
 	if request.method == 'POST':
-		FoodPermit.objects.filter(locationid=locationid)
+		FoodPermit.objects.filter(locationid=locationid).delete()
 	return HttpResponse("Deleted")
