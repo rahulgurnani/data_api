@@ -7,7 +7,7 @@ from django import forms
 class FoodPermitFilter(django_filters.FilterSet):
     address_contains = django_filters.CharFilter(name='address', lookup_expr='contains')
     applicant_name_contains = django_filters.CharFilter(name='applicant', lookup_expr='contains')
-    expired_permits = django_filters.DateFilter(name='expirationdate', lookup_expr='lte', widget = extras.SelectDateWidget)
+    expired_permits = django_filters.DateFilter(name='expirationdate', lookup_expr='lte', widget = extras.SelectDateWidget(years=range(2000, 2030)))
     class Meta:
         model = FoodPermit
         fields = ['applicant', 'address', 'address_contains', 'expired_permits']
