@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 {% load bootstrap3 %}
+{% load crispy_forms_tags %}
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="{% static 'includes/bootstrap/dist/css/bootstrap.css' %}">
@@ -8,15 +9,20 @@
 	<title>Add New Entry</title>
 </head>
 <body>
+	<br>
 	<form method="POST" class="post-form">{% csrf_token %}
 		{% for field in form %}
-			<div id="{{ field.auto_id }}_container">
+			<div id="{{ field.auto_id }}_container" style="margin-left: 10px">
 				{{ field.help_text }}
-				<div>
-					<span align="left">
+				<div style="margin-left: 10px">
+
+					<span style="margin-right: 10px">
 						{{ field.label_tag }} 
 					</span>
-					<span align="center">
+					<span>
+
+					</span>
+					<span style="margin-right: 10px">
 						{{ field }} 
 					</span>
 				</div>
@@ -24,8 +30,9 @@
 					{{ field.errors }}
 				</div>
 			</div>
+			<br>
 		{% endfor %}
-	    <button type="submit" class="save btn btn-default">Save</button>
+	    <input type="button" value="Save" class="btn btn-primary" style="margin: 20px;"></input>
     </form>
 	
 </body>

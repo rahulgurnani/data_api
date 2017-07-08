@@ -6,7 +6,7 @@ from .models import FoodPermit
 from .filters import FoodPermitFilter
 from django.http import HttpResponse
 import populate_script
-from .tasks import auto_expire
+#from .tasks import auto_expire
 
 def index(request):
 	context = {}
@@ -45,6 +45,6 @@ def delete_entry(request, locationid=None):
 	return HttpResponse("Deleted")
 
 def auto_update(request):
-	auto_expire(repeat = 86400)
+#	auto_expire(repeat = 86400)
 	return HttpResponse("auto_expire called :)")
 	
