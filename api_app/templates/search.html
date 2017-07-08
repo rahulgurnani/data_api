@@ -33,7 +33,7 @@
           </th>
         </tr>
         {% for foodpermit in filter.qs %}
-          <form method="post" action="{%url 'delete' id=foodpermit.locationid%}">
+          <form method="post">
             {% csrf_token %}
               <tr>
                 <th>
@@ -49,10 +49,9 @@
                  {{ foodpermit.status }}
                 </th>
                 <th>
-                  <input type="checkbox" name="delete-entry" value="delete" }}/>
+                  <input type="checkbox" name="delete-entry">
                 </th>
               </tr>
-            </form>
             {% endfor %}
           </table>
         <button type="submit" value="Delete">Delete</button>
