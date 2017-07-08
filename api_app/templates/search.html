@@ -13,12 +13,38 @@
         {{ filter.form.as_p }}
         <button type="submit" class="btn btn-primary" >Search</button>
       </form>
-      <ul>
-        <li> Location Id - Applicant Name - Address - Status </li>
+      <table style="width:100%">
+        <tr>
+          <th>
+            Location Id
+          </th>
+          <th>
+            Applicant Name
+          </th> 
+          <th>
+            Address
+          </th>
+          <th>
+            Status
+          </th>
+        </tr>
         {% for foodpermit in filter.qs %}
-          <li>{{ foodpermit.locationid }} - {{ foodpermit.applicant }} - {{ foodpermit.address }} - {{ foodpermit.status }}</li>
+        <tr>
+          <th>
+            {{ foodpermit.locationid }} 
+          </th>
+          <th> 
+            {{ foodpermit.applicant }}
+          </th> 
+          <th>
+            {{ foodpermit.address }}
+          </th>
+          <th>
+           {{ foodpermit.status }}
+         </th>
+       </tr>
       {% endfor %}
-      </ul>
+      </table>
   </div>
 </body>
 </html>
