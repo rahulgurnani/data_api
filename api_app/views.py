@@ -48,7 +48,7 @@ def populate(request):
 def delete_entry(request, locationid=None):
 	if request.method == 'POST':
 		FoodPermit.objects.filter(locationid=locationid).delete()
-	return search(request)
+	return redirect('/search')
 
 def auto_update(request):
 #	auto_expire(repeat = 86400)
