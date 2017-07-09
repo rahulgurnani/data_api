@@ -8,6 +8,6 @@ def get_truck_name(locationid):
 		distance = abs(obj.locationid - int(locationid))
 		if distance < closest:
 			closest = distance
-			ans = obj.Applicant
+			ans = obj.applicant
 
 	return ans
