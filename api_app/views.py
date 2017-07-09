@@ -35,7 +35,7 @@ def add_entry(request):
 
 def predict_best(request):
 	if request.method == 'POST':
-		ans = find_nearest.get_truck_name(requestPOST.get('locationid'))
+		ans = find_nearest.get_truck_name(request.POST.get('locationid'))
 		#return render(request, 'predict_best.html', {'ans': ans})
 		return HttpResponse("Best truck : " + str(ans))
 	context = {'ans' : ''}
