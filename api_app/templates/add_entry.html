@@ -9,6 +9,7 @@
 </head>
 <body>
 	<br>
+	<h2> Enter the Details </h2>
 	<form method="POST" class="post-form">{% csrf_token %}
 		{% for field in form %}
 			<div id="{{ field.auto_id }}_container" style="margin-left: 10px">

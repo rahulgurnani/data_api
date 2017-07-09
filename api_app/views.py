@@ -33,12 +33,16 @@ def add_entry(request):
 	return render(request, 'add_entry.html', {'form':form})
 
 def predict_best(request):
+	context = {'ans' : ''}
 	if request.method == 'POST':
-		ans = find_nearest.get_truck_name(request.POST.get('locationid'))
+		locationid = request.POST.get('locationid')
+		if not locationid.isdigit():
+			return render(request, 'predict_best.html', context)		
+		ans = find_nearest.get_truck_name()
 		ans = "Best truck for searched location id : " + str(ans)
 		return render(request, 'predict_best.html', {'ans': ans})
 	
-	context = {'ans' : ''}
+	
 	return render(request, 'predict_best.html', context)
 
 def populate(request):
