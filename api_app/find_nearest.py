@@ -5,7 +5,7 @@ def get_truck_name(locationid):
 	closest = float("inf")
 	ans = None
 	for obj in all_objects:
-		if abs(obj.locationid - locationid) < closest:
+		if abs(obj.locationid - int(locationid)) < closest:
 			closest = abs(obj.locationid - locationid)
 			ans = obj.Applicant
 
