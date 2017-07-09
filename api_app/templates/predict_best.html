@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{% static 'includes/bootstrap/dist/css/bootstrap.css' %}">
+	<meta charset="UTF-8">
+	<title>Predict Best Truck</title>
+</head>
+<body>
+	<div class="container">
+		<form action="/predict_best/">
+			Enter Location Id : <input type="text" name="locationid">
+			<input type="submit" value="Submit">
+		</form>
+		<h1> {{ ans }} <h1>
+	</div>
+</body>
+</html>

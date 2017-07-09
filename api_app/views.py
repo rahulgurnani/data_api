@@ -6,6 +6,8 @@ from .models import FoodPermit
 from .filters import FoodPermitFilter
 from django.http import HttpResponse
 import populate_script
+import find_nearest
+
 #from .tasks import auto_expire
 
 def index(request):
@@ -32,7 +34,10 @@ def add_entry(request):
 	return render(request, 'add_entry.html', {'form':form})
 
 def predict_best(request):
-	context = {}
+	if request.method == 'POST':
+		ans = find_nearest.get_truck_name(request.post.get('locationid'))
+		return render(request, 'predict_best.html', {'ans': ans})
+	context = {'ans' : ''}
 	return render(request, 'predict_best.html', context)
 
 def populate(request):
@@ -47,4 +52,3 @@ def delete_entry(request, locationid=None):
 def auto_update(request):
 #	auto_expire(repeat = 86400)
 	return HttpResponse("auto_expire called :)")
-	
