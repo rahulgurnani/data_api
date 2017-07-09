@@ -7,13 +7,14 @@
 	<title>Predict Best Truck</title>
 </head>
 <body>
+	<br>
 	<div class="container">
 		<form action="/predict_best/" method="POST">
 			{% csrf_token %}
 			Enter Location Id : <input type="text" name="locationid">
-			<input type="submit" value="Submit">
+			<input type="submit" value="Submit" class="btn btn-primary">
 		</form>
-		<h1> {{ ans }} <h1>
+		{{ ans }}
 	</div>
 </body>
 </html>
